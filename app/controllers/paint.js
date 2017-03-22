@@ -1,21 +1,21 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-  img:new Image(500, 500),
+  imgsrc:null,
   canvas:null,
-  black(file){
-    let canvas = Ember.$('canvas').get(0),
-        ctx = canvas.getContext('2d'),
-        img = this.get('img');
 
+  black(imgData){
+    let canvas = Ember.$('canvas').get(0),
+        img = new Image,
+        ctx = canvas.getContext('2d');
+
+    img.src = imgData
     canvas.width = canvas.height = img.width;
-    // img.src = URL.createObjectURL(file);
     ctx.drawImage(img,0,0);
-  //
+
     let imgd = ctx.getImageData(0, 0, canvas.width, canvas.height),
-        pix = imgd.data,
-        newColor = 125;
-  //
+        pix = imgd.data;
+
     for (let i = 0, n = pix.length; i <n; i += 4) {
         let r = pix[i],
             g = pix[i+1],
@@ -31,21 +31,18 @@ export default Ember.Controller.extend({
     }
 
     ctx.putImageData(imgd,0,0);
-
   },
+
   actions:{
     upload(evt){
-      // alert('change');
       const reader = new FileReader();
       const file = event.target.files[0];
-      let img = this.get('img');
-      let imageData;
+      let imgData = null;
 
       reader.onload = () => {
-        //Base64
-        img.src = reader.result;
-        // this.set('img', imageData);
-        this.black(file);
+        imgData = reader.result;
+        this.set('imgsrc', imgData);
+        this.black(imgData);
       };
 
       if (file) {
