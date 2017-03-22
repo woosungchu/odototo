@@ -1,5 +1,12 @@
-<input type="file" accept="image/png,image/jpeg,image/jpg"
-  onchange={{action "upload"}} multiple="false"/>
-<img src={{imgsrc}} style="width:500px;height:auto;margin:10px;"/>
-<canvas style="margin:10px;"></canvas>
+<div class="row">
+  <div class="col-sm-6">
+    <img src={{imgsrc}}  style="min-width:300px;min-height:300px;" />
+    <input type="file" accept="image/png,image/jpeg,image/jpg"
+    onchange={{action "upload"}} multiple="false"/>
+  </div>
+  <div class="col-sm-6">
+    <canvas style="min-width:300px;min-height:300px;" ></canvas>
+    <input type="range"  min="0" max="255" value=120 {{action "gray" on="change"}}/>
+  </div>
+</div>
 {{outlet}}
