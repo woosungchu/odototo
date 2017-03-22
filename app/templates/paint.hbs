@@ -1,4 +1,6 @@
-<input type="file" accept="image/png,image/jpeg,application/pdf"
-  onchange={{action "upload"}} multiple="true"/>
-
+<input type="file" accept="image/png,image/jpeg,image/jpg"
+  onchange={{action "upload"}} multiple="false"/>
+<!-- <img src={{img}} style="width:500px;height:auto;margin:10px;"/> -->
+{{img}}
+<canvas style="width:500px;height:auto;margin:10px;"></canvas>
 {{outlet}}
