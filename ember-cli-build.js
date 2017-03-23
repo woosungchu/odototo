@@ -8,9 +8,6 @@ module.exports = function(defaults) {
       'bootstrapVersion': 3,
       'importBootstrapFont': true,
       'importBootstrapCSS': true
-    },
-    fingerprint: {
-      prepend: 'https://odototo.herokuapp.com/'
     }
   });
 
