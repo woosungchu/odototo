@@ -1,0 +1,17 @@
+@import "ember-bootstrap/bootstrap";
+
+#logo {
+  color: white;
+}
+
+#paint-bleach {
+  img,canvas {
+    min-width:300px;
+    min-height:300px;
+    max-width: 580px;
+
+    // span {
+    //   text-decoration: underline;
+    // }
+  }
+}
