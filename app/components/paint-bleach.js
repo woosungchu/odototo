@@ -5,13 +5,6 @@ export default Ember.Component.extend({
   canvas:null,
   criteria:120,
 
-  didRender(){
-    this._super(...arguments);
-    alert('hello');
-    Ember.$('input[type=file]:eq(0)').val('assets/totoro.jpg');
-  //   // this.send('upload');
-  },
-
   actions:{
     upload(evt){
       const reader = new FileReader();
@@ -27,7 +20,7 @@ export default Ember.Component.extend({
         canvas.width = img.width;
         canvas.height = img.height;
 
-        this.send('gray');
+        this.send('bleach');
       };
 
       if (file) {
@@ -35,7 +28,7 @@ export default Ember.Component.extend({
       }
     },//end upload
 
-    gray(){
+    bleach(){
       let canvas = Ember.$('canvas').get(0),
           ctx = canvas.getContext('2d'),
           criteria = Ember.$('input[type=range]:eq(0)').val() || 120,
