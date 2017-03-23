@@ -1,12 +1,16 @@
 <div id="paint-bleach" class="row">
   <div class="col-sm-6">
     <img src={{imgsrc}}  />
-    <input type="file" accept="image/png,image/jpeg,image/jpg"
-    onchange={{action "upload"}} multiple="false"/>
+    <div class="prop">
+      <input type="file" accept="image/png,image/jpeg,image/jpg"
+        onchange={{action "upload"}} multiple="false"/>
+    </div>
   </div>
   <div class="col-sm-6">
-    <canvas ></canvas>
-    <input type="range"  min="0" max="255" value={{criteria}} {{action "bleach" on="change"}}/>
-    <span>명도 : {{criteria}}</span>
+    <canvas></canvas>
+    <div class="prop">
+      <input type="range"  min="0" max="255" value={{criteria}} {{action "bleach" on="change"}}/>
+      <span>명도 : {{criteria}}</span>
+    </div>
   </div>
 </div>

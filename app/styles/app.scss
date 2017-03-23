@@ -18,13 +18,15 @@ html, body{
 
 #paint-bleach {
   img,canvas {
+    vertical-align : baseline;//make it none
     min-width:300px;
     min-height:300px;
     max-width: 100%;
+  }
 
-    padding: 3px;
-    margin-bottom: 5px;
-    border-bottom: 3px #cacdd0 solid;
-
+  div.prop {
+    width:100%;
+    padding-top:5px;
+    border-top: 3px solid #cacdd0;
   }
 }
