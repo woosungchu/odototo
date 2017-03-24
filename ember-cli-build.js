@@ -8,6 +8,10 @@ module.exports = function(defaults) {
       'bootstrapVersion': 3,
       'importBootstrapFont': true,
       'importBootstrapCSS': false
+    },
+    fingerprint: {
+      exclude: ['assets/images'],
+      prepend: 'https://odototo.herokuapp.com/'
     }
   });
 
