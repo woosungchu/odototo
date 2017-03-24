@@ -56,6 +56,15 @@ export default Ember.Component.extend({
           }
       }
       ctx.putImageData(imgd,0,0);
-    }//end control
+    },//end bleach
+
+    download(evt){
+      let canvas = Ember.$('canvas').get(0),
+          link = evt.target;
+
+      link.href = canvas.toDataURL();
+      link.download = 'odototo-'+new Date().valueOf();
+    }//end download
+    
   }//end actions
 });
