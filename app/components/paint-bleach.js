@@ -3,7 +3,7 @@ import Ember from 'ember';
 export default Ember.Component.extend({
   imgsrc: null,//'assets/totoro.jpg',
   canvas:null,
-  criteria:120,
+  degree:120,
 
   actions:{
     upload(evt){
@@ -31,11 +31,11 @@ export default Ember.Component.extend({
     bleach(){
       let canvas = Ember.$('canvas').get(0),
           ctx = canvas.getContext('2d'),
-          criteria = Ember.$('input[type=range]:eq(0)').val() || 120,
+          degree = Ember.$('input[type=range]:eq(0)').val() || 120,
           img = new Image,
           imgd,pix;
 
-      this.set('criteria',criteria);
+      this.set('degree',degree);
       img.src = this.get('imgsrc');
       ctx.drawImage(img,0,0);
 
@@ -49,7 +49,7 @@ export default Ember.Component.extend({
               L = r * 299/1000 + g * 587/1000 + b * 114/1000;
 
           // If its white then change it
-          if(L < criteria){
+          if(L < degree){
             pix[i] = pix[i+1] = pix[i+2] = 0; //black
           }else{
             pix[i] = pix[i+1] = pix[i+2] = 255; //white
@@ -65,6 +65,6 @@ export default Ember.Component.extend({
       link.href = canvas.toDataURL();
       link.download = 'odototo-'+new Date().valueOf();
     }//end download
-    
+
   }//end actions
 });

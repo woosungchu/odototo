@@ -35,7 +35,9 @@ html, body{
 
     input[type="range"]{
       display: inline;
-      width:50%;
+      width:40%;
+      min-width: 142px;
+      max-width: 250px;
       vertical-align: middle;
     }
 
