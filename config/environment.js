@@ -9,6 +9,9 @@ module.exports = function(environment) {
     i18n:{
       defaultLocale: 'ko'
     },
+    disqus: {
+      shortname: 'odototo'
+    },
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
