@@ -22,11 +22,13 @@
         <p>{{t 'paint.description'}}</p>
     </div>
     <div class="col-md-6 odo-panel">
-        <a href="#">
+        {{#link-to 'blank'}}
             <img class="img-responsive" src="http://placehold.it/700x400" alt="{{t 'blank.title'}}">
-        </a>
+        {{/link-to}}
         <h3>
-            <a href="#">{{t 'blank.title'}}</a>
+          {{#link-to 'blank'}}
+            {{t 'blank.title'}}
+          {{/link-to}}
         </h3>
         <p>{{t 'blank.description'}}</p>
     </div>
