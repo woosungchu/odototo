@@ -2,6 +2,17 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
 
+  click(evt){
+    let target = evt.target,
+        spaces = null;
+
+    if(target.tagName === 'SPAN'){
+      spaces = (new Array(target.outerText.length + 1)).join('  ');
+      // target.outerText = '['+ ' '.repeat(2*target.outerText.length) +']'; // not supported IE
+      target.outerText = '['+ spaces + ']';
+    }
+  },
+
   actions: {
     convert(){
       let $textarea = Ember.$('textarea'),
@@ -10,12 +21,12 @@ export default Ember.Component.extend({
       $textarea.prop('disabled',true);
       $editor.html(
         $textarea.val()
-          .replace(/([^\u0000-\u007F]|\w)+/g, function(word){
+          // .replace('<','&lt;').replace('>', '&gt;')
+          .replace(/([^\u0000-\u007F]|\w)+/g, function(word){/*(?![^<]*>)*/
             return '<span>'+word+'</span>'
           })
           .replace(/\r?\n/, "<br/>")
       );
-
     },//end convert
 
     cancel(){
@@ -26,6 +37,7 @@ export default Ember.Component.extend({
       $editor.html('');
     }//end cancel
   }
+
 });
 
 /**

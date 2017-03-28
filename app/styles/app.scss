@@ -55,6 +55,10 @@ html, body{
 
 #blank-converter{
 
+  textarea {
+    resize: none;
+  }
+
   .editor{
     width: 100%;
     height: 500px;
@@ -64,7 +68,15 @@ html, body{
   #blank-editor {
     border: 1px solid #cacdd0;
     border-radius: 5px;
-    white-space:pre;
+    // white-space:pre-line;// indent disabled
+    // white-space:pre; // overflowed width doesn't cut automatically
+    white-space:pre-wrap;
     overflow: auto;
+
+    span:hover {
+      cursor: pointer;
+      background-color: pink;
+    }
+
   }
 }
