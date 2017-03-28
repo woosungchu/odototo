@@ -25,6 +25,15 @@ export default {
     'blank': {
       'title':'빈칸 채우기',
       'description':'글의 원하는 단어를 빈칸으로 만들어 버립니다!',
+      'converter':{
+        'convert':'확인',
+        'cancel':'취소'
+      },
+      'guide' : {
+        'howto':'How to...',
+        '1': '왼쪽에 글을 붙여 놓고 \'확인 버튼을\' 누룹니다',
+        '2': '오른쪽에 빈칸으로 만들 단어를 클릭합니다'
+      }
     },
 
 };

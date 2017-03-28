@@ -25,6 +25,17 @@ export default {
   'blank': {
     'title':'Fill in the blank!',
     'description':'This is useful tool to make blank in the texts',
+
+    'converter':{
+      'convert':'Convert',
+      'cancel':'Cancel'
+    },
+
+    'guide' : {
+      'howto':'How to...',
+      '1': 'Put text source into left textarea and click \'Convert\' button',
+      '2': 'Click word to convert in right area'
+    }
   },
 
 

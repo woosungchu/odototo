@@ -71,7 +71,11 @@ html, body{
     // white-space:pre-line;// indent disabled
     // white-space:pre; // overflowed width doesn't cut automatically
     white-space:pre-wrap;
-    overflow: auto;
+    overflow-y: auto;
+
+    span{
+      text-decoration: underline;
+    }
 
     span:hover {
       cursor: pointer;
