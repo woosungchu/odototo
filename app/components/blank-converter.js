@@ -8,7 +8,13 @@ export default Ember.Component.extend({
           $editor = Ember.$('#blank-editor');
 
       $textarea.prop('disabled',true);
-      $editor.text($textarea.val());
+      $editor.html(
+        $textarea.val()
+          .replace(/([^\u0000-\u007F]|\w)+/g, function(word){
+            return '<span>'+word+'</span>'
+          })
+          .replace(/\r?\n/, "<br/>")
+      );
 
     },//end convert
 
@@ -21,3 +27,8 @@ export default Ember.Component.extend({
     }//end cancel
   }
 });
+
+/**
+references
+http://stackoverflow.com/questions/150033/regular-expression-to-match-non-english-characters/873600#873600
+*/
