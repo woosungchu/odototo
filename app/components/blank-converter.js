@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import { translationMacro as t } from "ember-i18n";
 
 export default Ember.Component.extend({
 
@@ -27,6 +28,31 @@ export default Ember.Component.extend({
           .replace(/\r?\n/, "<br/>")
       );
     },//end convert
+
+    copy(){
+      let editor = Ember.$('#blank-editor').get(0),
+          $msg = Ember.$('#blank-msg');
+
+      window.getSelection().removeAllRanges();
+
+      if (document.selection) {
+          var range = document.body.createTextRange();
+          range.moveToElementText(editor);
+          range.select();
+      } else if (window.getSelection) {
+          var range = document.createRange();
+          range.selectNode(editor);
+          window.getSelection().addRange(range);
+      }
+
+      if ( document.execCommand( 'copy' ) ) {
+        $msg.show();
+        setTimeout(function(){$msg.fadeOut();}, 1000);
+
+      } else {
+          alert(t('blank.converter.failed'));
+      }
+    },
 
     cancel(){
       let $textarea = Ember.$('textarea'),

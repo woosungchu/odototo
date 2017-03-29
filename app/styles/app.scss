@@ -22,6 +22,10 @@ html, body{
   margin-top:150px;
 }
 
+.message{
+  font-weight: bold;
+}
+
 #paint-bleach {
   img,canvas {
     vertical-align : baseline;//make it none
@@ -81,6 +85,5 @@ html, body{
       cursor: pointer;
       background-color: pink;
     }
-
   }
 }
