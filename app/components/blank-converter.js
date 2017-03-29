@@ -21,8 +21,7 @@ export default Ember.Component.extend({
       $textarea.prop('disabled',true);
       $editor.html(
         $textarea.val()
-          // .replace('<','&lt;').replace('>', '&gt;')
-          .replace(/([^\u0000-\u007F]|\w)+/g, function(word){/*(?![^<]*>)*/
+          .replace(/([!('"]|\S)+[^\s\., !?'")]/g, function(word){
             return '<span>'+word+'</span>'
           })
           .replace(/\r?\n/, "<br/>")
