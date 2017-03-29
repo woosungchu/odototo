@@ -10,8 +10,8 @@ module.exports = function(defaults) {
       'importBootstrapCSS': false
     },
     fingerprint: {
-      exclude: ['assets/images'],
-      prepend: 'https://odototo.herokuapp.com/'
+      exclude: ['assets/images']//,
+    //  prepend: 'https://odototo.herokuapp.com/'
     }
   });
 
