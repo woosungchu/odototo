@@ -3,14 +3,19 @@ import { translationMacro as t } from "ember-i18n";
 
 export default Ember.Component.extend({
 
+  lenBytes(s,b,i,c){
+    for(b=i=0;c=s.charCodeAt(i++);b+=c>>11?3:c>>7?2:1);
+    return b
+  },
+
   click(evt){
     let target = evt.target,
         spaces = null;
 
     if(target.tagName === 'SPAN'){
-      spaces = (new Array(target.outerText.length + 1)).join('  ');
+      spaces = (new Array(this.lenBytes(target.outerText) + 1)).join('&nbsp;&nbsp;');
       // target.outerText = '['+ ' '.repeat(2*target.outerText.length) +']'; // not supported IE
-      target.outerText = '['+ spaces + ']';
+      target.outerHTML = '['+ spaces + ']';
     }
   },
 
@@ -22,7 +27,7 @@ export default Ember.Component.extend({
       $textarea.prop('disabled',true);
       $editor.html(
         $textarea.val()
-          .replace(/([!('"]|\S)+[^\s\., !?'")]/g, function(word){
+          .replace(/([^\u0000-\u007F]|\w|\.|-)+[^\s\.,!?'")]/g, function(word){
             return '<span>'+word+'</span>'
           })
           .replace(/\r?\n/, "<br/>")
