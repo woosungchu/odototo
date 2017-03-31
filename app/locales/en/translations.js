@@ -29,6 +29,7 @@ export default {
       'copied':'Copied!',
       'failed':'Current browser isn\'t supported',
       'convert':'Convert',
+      'print':'Print',
       'copy':'Copy',
       'cancel':'Cancel'
     },

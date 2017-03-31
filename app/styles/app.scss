@@ -87,3 +87,33 @@ html, body{
     }
   }
 }
+
+@media print{
+  body * {
+    visibility: hidden;
+    position: absolute;
+    top: 0px; right: 0px;
+    width:100%;
+  }
+
+  .printing {
+    visibility: visible;
+    position: absolute;
+    top:20px; left:0px;
+  }
+  .printing * {
+    visibility: visible;
+    position: static;
+  }
+
+  #blank-editor {
+    border:none !important;
+    border-top: 1px solid black !important;
+    overflow-y: visible !important;
+
+    span {
+      text-decoration: none !important;
+    }
+  }
+
+}

@@ -29,6 +29,7 @@ export default {
       'copied':'복사 성공!',
       'failed':'해당 브라우저에서는 지원하지 않습니다',
       'convert':'확인',
+      'print':'인쇄',
       'copy':'복사',
       'cancel':'취소'
     },

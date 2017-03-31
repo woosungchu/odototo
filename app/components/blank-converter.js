@@ -2,6 +2,7 @@ import Ember from 'ember';
 import { translationMacro as t } from "ember-i18n";
 
 export default Ember.Component.extend({
+  printer : Ember.inject.service(),
 
   lenBytes(s,b,i,c){
     for(b=i=0;c=s.charCodeAt(i++);b+=c>>11?3:c>>7?2:1);
@@ -34,6 +35,12 @@ export default Ember.Component.extend({
       );
     },//end convert
 
+    print(){
+      let editor = Ember.$('#blank-editor').get(0);
+
+      this.get('printer').printout(editor);
+    },//end print
+
     copy(){
       let editor = Ember.$('#blank-editor').get(0),
           $msg = Ember.$('#blank-msg');
@@ -57,7 +64,7 @@ export default Ember.Component.extend({
       } else {
           alert(t('blank.converter.failed'));
       }
-    },
+    },//end copy
 
     cancel(){
       let $textarea = Ember.$('textarea'),
