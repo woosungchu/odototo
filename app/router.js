@@ -10,6 +10,7 @@ const Router = Ember.Router.extend(googlePageview, {
 Router.map(function() {
   this.route('paint');
   this.route('blank');
+  this.route('word');
 });
 
 export default Router;

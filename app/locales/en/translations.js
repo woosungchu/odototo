@@ -22,6 +22,11 @@ export default {
     'degree': 'Degree',
   },
 
+  'word': {
+    'title':'Word puzzles',
+    'description':'Worksheets for understanding the concept of each words',
+  },
+
   'blank': {
     'title':'Fill in the blank!',
     'description':'This is useful tool to make blank in the texts',

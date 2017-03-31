@@ -22,6 +22,11 @@ export default {
     'degree': '탈색 정도',
   },
 
+  'word': {
+    'title':'단어 맞추기',
+    'description':'단어의 개념을 이해하는 데 도움을 줄 학습지 제작',
+  },
+
   'blank': {
     'title':'빈칸 채우기',
     'description':'글의 원하는 단어를 빈칸으로 만들어 버립니다!',
