@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+  elementId: 'word-input',
   inputs: [],//[{word:'',answer:''},{word:'',answer:''}]
 
   addInput(data){
