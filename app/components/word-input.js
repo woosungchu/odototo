@@ -33,12 +33,11 @@ export default Ember.Component.extend({
       };
 
       this.addInput(data);
-      this.rerender();
     },//addrow
 
     removerow(idx){
       let inputs = this.get('inputs');
-      
+
       inputs.removeObject(inputs[idx]);
     }//removerow
   }
