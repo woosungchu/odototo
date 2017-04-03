@@ -6,4 +6,5 @@ export default Ember.Controller.extend({
     let appCtrl = Ember.getOwner(this).lookup('controller:application');
     this.set('appCtrl', appCtrl);
   }
+
 });

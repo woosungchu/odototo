@@ -26,6 +26,14 @@ html, body{
   font-weight: bold;
 }
 
+// span.red{
+//   color:palevioletred;
+// }
+//
+// span.blue{
+//   color:royalblue;
+// }
+
 #paint-bleach {
   img,canvas {
     vertical-align : baseline;//make it none
@@ -86,6 +94,31 @@ html, body{
       background-color: pink;
     }
   }
+}
+
+
+
+#word-input {
+  li {
+    list-style-type: none;
+    padding-bottom: 5px;
+
+    * {
+      margin-left: 1.5%;
+    }
+
+    input {
+      padding : 6px 10px;
+      width: 41%;
+      border: 1px solid #CFD7E6;
+      border-radius: 4px;
+    }
+
+    span {
+      cursor: pointer;
+    }
+
+  }//li
 }
 
 @media print{

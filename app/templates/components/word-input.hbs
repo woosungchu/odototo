@@ -1,8 +1,16 @@
-<div>
+<div id="word-input">
   <ul>
-    <li><input type="text" size=10>&#58;<input type="text" size=40></li>
-    <li><input type="text" size=10>&#58;<input type="text" size=40></li>
-    <li><input type="text" size=10>&#58;<input type="text" size=40></li>
+    {{#each inputs as |input index|}}
+      <li>
+        <input type="text" placeholder="Word" value={{input.key}} >
+        <input type="text" placeholder="Answer" value={{input.value}} >
+        {{#if (eq index (subtract inputs.length 1) ) }}
+          <a {{action 'addrow' index}} class="btn btn-default">Add</a>
+        {{else}}
+          <span {{action 'removerow' index}} class="glyphicon glyphicon-remove"></span>
+        {{/if}}
+      </li>
+    {{/each}}
   </ul>
 </div>
 
