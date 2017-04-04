@@ -25,6 +25,18 @@ export default {
   'word': {
     'title':'단어 맞추기',
     'description':'단어의 개념을 이해하는 데 도움을 줄 학습지 제작',
+    'scramble':{
+      'title':'단어 맞추기',
+    },
+    'matchup':{
+      'title':'줄잇기',
+    },
+    'blank':{
+      'title':'빈칸채우기',
+    },
+    'crossword':{
+      'title':'낱말퍼즐',
+    },
   },
 
   'blank': {

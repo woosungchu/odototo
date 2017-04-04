@@ -25,6 +25,18 @@ export default {
   'word': {
     'title':'Word puzzles',
     'description':'Worksheets for understanding the concept of each words',
+    'scramble':{
+      'title':'Scramble',
+    },
+    'matchup':{
+      'title':'Matchup',
+    },
+    'blank':{
+      'title':'Blank',
+    },
+    'crossword':{
+      'title':'Crossword',
+    },
   },
 
   'blank': {

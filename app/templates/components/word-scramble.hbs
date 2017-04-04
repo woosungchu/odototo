@@ -1,3 +1,10 @@
 {{#each quizzes as |quiz|}}
-  <div>{{quiz.word}} : {{quiz.answer}}</div>
+<div class="scramble-block">
+  <div class="col-sm-4">
+    <span>{{quiz.word}}</span>
+  </div>
+  <div class="col-sm-8">
+    <span>{{quiz.answer}}</span>
+  </div>
+</div>
 {{/each}}

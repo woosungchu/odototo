@@ -3,6 +3,20 @@ import Ember from 'ember';
 export default Ember.Component.extend({
   inputs: [],//[{word:'',answer:''},{word:'',answer:''}]
 
+  init(){
+    this._super(...arguments);
+    this.addInput();
+  },
+
+  didRender(){
+    this._super(...arguments);
+    let lis = document.getElementById('word-input')
+                    .getElementsByTagName("li"),
+        input = lis[lis.length-1].getElementsByTagName("input")[0];
+
+    input.focus();
+  },
+
   yield(){
     let inputs = this.get('inputs'),
         quizzes = inputs.slice(),//shallow copy
@@ -11,7 +25,7 @@ export default Ember.Component.extend({
     //validate check
     for(let i = 0 ; i < quizzes.length; i++){
         quiz = quizzes[i];
-        if(!quiz.word || !quiz.answer){
+        if(!quiz.word && !quiz.answer){
           quizzes.splice(i,1);
         }
     }
@@ -26,21 +40,28 @@ export default Ember.Component.extend({
     inputs.pushObject(record);
   },
 
-  init(){
-    this._super(...arguments);
-    let inputs = this.get('inputs'),
-        index = inputs.length;
+  keyPress(evt) {
+    if (evt.which === 13) {
+      let target = evt.target,
+          input = target.parentNode.getElementsByTagName('input'),
+          data = null;
 
-    // for(let i = index; i < 3; i++)
-        this.addInput();
+      data= {
+        word:input[0].value,
+        answer:input[1].value
+      };
+
+      this.addInput(data);
+      this.yield();
+    }
   },
 
   actions : {
     addrow(idx){
       let inputs = this.get('inputs'),
-          div = document.getElementById('word-input'),
-          li = div.getElementsByTagName("li")[idx],
-          input = li.getElementsByTagName("input"),
+          input = document.getElementById('word-input')
+                        .getElementsByTagName("li")[idx]
+                        .getElementsByTagName("input"),
           data = null;
 
       data= {
@@ -58,5 +79,6 @@ export default Ember.Component.extend({
       inputs.removeObject(inputs[idx]);
       this.yield();
     }//removerow
+
   }
 });
