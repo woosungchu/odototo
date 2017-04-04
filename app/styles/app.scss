@@ -19,7 +19,7 @@ html, body{
 }
 
 .disqus{
-  margin-top:150px;
+  margin-top:125px;
 }
 
 .message{
@@ -96,7 +96,12 @@ html, body{
   }
 }
 
-
+#word-worksheet{
+  .tab-content{
+    min-height: 400px;
+    padding: 5px 3px;
+  }
+}
 
 #word-input {
   border-top: 3px solid #cacdd0;

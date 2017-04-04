@@ -5,9 +5,10 @@ export default Ember.Component.extend({
 
   yield(){
     let inputs = this.get('inputs'),
-        quizzes = inputs.slice(),//soft copy
+        quizzes = inputs.slice(),//shallow copy
         quiz = null;
 
+    //validate check
     for(let i = 0 ; i < quizzes.length; i++){
         quiz = quizzes[i];
         if(!quiz.word || !quiz.answer){

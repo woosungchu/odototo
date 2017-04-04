@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+  elementId : 'word-worksheet',
   classNames : ['col-md-12'],
 
   init(){
