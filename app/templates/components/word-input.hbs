@@ -1,14 +1,17 @@
-<ul>
-  {{#each inputs as |input index|}}
-    <li>
-      <input type="text" placeholder="Word" value={{input.key}} >
-      <input type="text" placeholder="Answer" value={{input.value}} >
-      {{#if (eq index (subtract inputs.length 1) ) }}
-        <a {{action 'addrow' index}} class="btn btn-default">Add</a>
-      {{else}}
-        <span {{action 'removerow' index}} class="glyphicon glyphicon-remove"></span>
-      {{/if}}
-    </li>
-  {{/each}}
-</ul>
-{{yield}}
+{{yield quizzes}}
+
+<div id="word-input">
+  <ul>
+    {{#each inputs as |input index|}}
+      <li>
+        <input type="text" placeholder="Word" value={{input.key}} >
+        <input type="text" placeholder="Answer" value={{input.value}} >
+        {{#if (eq index (subtract inputs.length 1) ) }}
+          <a {{action 'addrow' index}} class="btn btn-default">Add</a>
+        {{else}}
+          <span {{action 'removerow' index}} class="glyphicon glyphicon-remove"></span>
+        {{/if}}
+      </li>
+    {{/each}}
+  </ul>
+</div>

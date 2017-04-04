@@ -1,8 +1,22 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  elementId: 'word-input',
   inputs: [],//[{word:'',answer:''},{word:'',answer:''}]
+
+  yield(){
+    let inputs = this.get('inputs'),
+        quizzes = inputs.slice(),//soft copy
+        quiz = null;
+
+    for(let i = 0 ; i < quizzes.length; i++){
+        quiz = quizzes[i];
+        if(!quiz.word || !quiz.answer){
+          quizzes.splice(i,1);
+        }
+    }
+
+    this.set('quizzes',quizzes);
+  },//end yield
 
   addInput(data){
     let inputs = this.get('inputs'),
@@ -34,12 +48,14 @@ export default Ember.Component.extend({
       };
 
       this.addInput(data);
+      this.yield();
     },//addrow
 
     removerow(idx){
       let inputs = this.get('inputs');
 
       inputs.removeObject(inputs[idx]);
+      this.yield();
     }//removerow
   }
 });
