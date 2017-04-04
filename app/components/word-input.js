@@ -5,14 +5,24 @@ export default Ember.Component.extend({
 
   init(){
     this._super(...arguments);
-    this.addInput();
+  },
+
+  willRender(){
+    this._super(...arguments);
+    let inputs = this.get('inputs'),
+        last = inputs[inputs.length-1];
+
+    //init or last element is empty
+    if(!last || last.word || last.answer){
+      this.addInput();
+    }
   },
 
   didRender(){
     this._super(...arguments);
     let lis = document.getElementById('word-input')
                     .getElementsByTagName("li"),
-        input = lis[lis.length-1].getElementsByTagName("input")[0];
+        input = input = lis[lis.length-1].getElementsByTagName("input")[0];
 
     input.focus();
   },
@@ -33,6 +43,27 @@ export default Ember.Component.extend({
     this.set('quizzes',quizzes);
   },//end yield
 
+  sync(){
+    let lis = document.getElementById('word-input')
+                    .getElementsByTagName("li"),
+        inputs = this.get('inputs'),
+        arr = [],
+        input,data;
+
+    for(let i = 0; i < lis.length; i++){
+      input = lis[i].getElementsByTagName("input");
+      data ={word:'',answer:''};
+
+      data.word = input[0].value;
+      data.answer = input[1].value;
+
+      arr.push(data);
+    }
+
+    inputs.setObjects(arr);
+    this.yield();
+  },
+
   addInput(data){
     let inputs = this.get('inputs'),
         record = data || {word:'',answer:''};
@@ -42,35 +73,13 @@ export default Ember.Component.extend({
 
   keyPress(evt) {
     if (evt.which === 13) {
-      let target = evt.target,
-          input = target.parentNode.getElementsByTagName('input'),
-          data = null;
-
-      data= {
-        word:input[0].value,
-        answer:input[1].value
-      };
-
-      this.addInput(data);
-      this.yield();
+      this.sync();
     }
   },
 
   actions : {
-    addrow(idx){
-      let inputs = this.get('inputs'),
-          input = document.getElementById('word-input')
-                        .getElementsByTagName("li")[idx]
-                        .getElementsByTagName("input"),
-          data = null;
-
-      data= {
-        word:input[0].value,
-        answer:input[1].value
-      };
-
-      this.addInput(data);
-      this.yield();
+    addrow(){
+      this.sync();
     },//addrow
 
     removerow(idx){
