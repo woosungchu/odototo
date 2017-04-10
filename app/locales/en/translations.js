@@ -10,6 +10,7 @@ export default {
   // "key.with.interpolation": "Text with {{anInterpolation}}"
   'odototo': 'Odototo',
   'download': 'download',
+  'print':'Print',
 
   'page-header': {
     'title':'Good job!',
@@ -25,6 +26,12 @@ export default {
   'word': {
     'title':'Word puzzles',
     'description':'Worksheets for understanding the concept of each words',
+
+    'header':{
+      'word':'Word',
+      'meaning':'Meaning',
+    },
+
     'scramble':{
       'title':'Scramble',
     },

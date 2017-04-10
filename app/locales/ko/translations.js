@@ -10,6 +10,7 @@ export default {
   // "key.with.interpolation": "Text with {{anInterpolation}}"
   'odototo': '오동통통',
   'download': '다운로드',
+  'print':'인쇄',
 
   'page-header': {
     'title':'참 잘했어요!',
@@ -25,6 +26,11 @@ export default {
   'word': {
     'title':'단어 맞추기',
     'description':'단어의 개념을 이해하는 데 도움을 줄 학습지 제작',
+
+    'header':{
+      'word':'단어',
+      'meaning':'뜻',
+    },
     'scramble':{
       'title':'단어 맞추기',
     },

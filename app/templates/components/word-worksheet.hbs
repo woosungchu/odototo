@@ -2,11 +2,11 @@
   {{#tab.pane title=(t 'word.scramble.title')}}
     {{word-scramble outputs=outputs}}
   {{/tab.pane}}
+<!--
   {{#tab.pane title=(t 'word.matchup.title') }}
     {{word-matchup outputs=outputs}}
   {{/tab.pane}}
-
-  <!-- {{#tab.pane title=(t 'word.blank.title') }}
+  {{#tab.pane title=(t 'word.blank.title') }}
     {{word-blank quizzes=quizzes}}
   {{/tab.pane}}
   {{#tab.pane title=(t 'word.scramble.title') }}
@@ -18,3 +18,8 @@
     {{word-crossword quizzes=quizzes}}
   {{/tab.pane}} -->
 {{/bs-tab}}
+
+
+<div class="buttons">
+  <a class="btn btn-default" {{action "print"}}>{{t 'print'}}</a>
+</div>
