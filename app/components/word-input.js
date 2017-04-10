@@ -29,18 +29,18 @@ export default Ember.Component.extend({
 
   yield(){
     let inputs = this.get('inputs'),
-        quizzes = inputs.slice(),//shallow copy
-        quiz = null;
+        outputs = inputs.slice(),//shallow copy
+        output = null;
 
     //validate check
-    for(let i = 0 ; i < quizzes.length; i++){
-        quiz = quizzes[i];
-        if(!quiz.word && !quiz.answer){
-          quizzes.splice(i,1);
+    for(let i = 0 ; i < outputs.length; i++){
+        output = outputs[i];
+        if(!output.word && !output.answer){
+          outputs.splice(i,1);
         }
     }
 
-    this.set('quizzes',quizzes);
+    this.set('outputs',outputs);
   },//end yield
 
   sync(){
