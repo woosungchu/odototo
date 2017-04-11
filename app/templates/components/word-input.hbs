@@ -2,15 +2,16 @@
 
 <div id="word-input">
   <ul>
+    <li>
+      <input class="input-quiz" type="text" name="word" placeholder="Word" >
+      <input class="input-quiz" type="text" name="answer" placeholder="Answer" >
+      <a {{action 'addrow'}} class="btn btn-default">Add</a>
+    </li>
     {{#each inputs as |input index|}}
-      <li>
-        <input type="text" placeholder="Word" value={{input.word}} >
-        <input type="text" placeholder="Answer" value={{input.answer}} >
-        {{#if (eq index (subtract inputs.length 1) ) }}
-          <a {{action 'addrow'}} class="btn btn-default">Add</a>
-        {{else}}
-          <span {{action 'removerow' index}} class="glyphicon glyphicon-remove"></span>
-        {{/if}}
+      <li class="grey-line">
+        <span class="input-quiz">{{input.word}}</span>
+        <span class="input-quiz">{{input.answer}}</span>
+        <span {{action 'removerow' index}} class="glyphicon glyphicon-remove"></span>
       </li>
     {{/each}}
   </ul>
