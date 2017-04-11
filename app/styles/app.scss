@@ -21,29 +21,11 @@ body{
   }
 }
 
-.header{
-  font-weight: bold;
-}
-
-.odo-panel {
-    margin-bottom: 25px;
-}
-
-.disqus{
-  margin-top:125px;
-}
-
-.message{
-  font-weight: bold;
-}
-
-// span.red{
-//   color:palevioletred;
-// }
-//
-// span.blue{
-//   color:royalblue;
-// }
+.header{font-weight: bold;}
+.odo-panel {margin-bottom: 25px;}
+.disqus{margin-top:125px;}
+.message{font-weight: bold;}
+.none{display: none;}
 
 #paint-bleach {
   img,canvas {
@@ -127,6 +109,10 @@ body{
     text-align: right;
   }
 
+  div.qz-block{
+    border-bottom: 1px solid #cacdd0;
+  }
+
   #word-scramble{
 
     .scramble{
@@ -137,15 +123,34 @@ body{
         padding: 5px 20px;
         margin:5px 0px;
       }
-      div.scr-block{
-        border-bottom: 1px solid #cacdd0;
-      }
+
     }
 
     .scramble:nth-of-type(even){
       background-color: rgba(225, 225, 232,0.1);
     }
 
+  }
+
+  #word-matchup{
+    .matchup{
+      display: flex;
+
+      div{
+        flex:inherit;
+        padding: 5px 20px;
+        margin:5px 0px;
+      }
+
+      .dot-out{
+        display: list-item;
+      }
+
+      .dot-in{
+        display: list-item;
+        list-style-position: inside;
+      }
+    }
   }
 
 

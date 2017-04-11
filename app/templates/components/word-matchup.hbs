@@ -1,27 +1,27 @@
 <div>
   <div class="row header">
     <div class="col-sm-1">
-      <h5>#</h5>
+      <span>#</span>
     </div>
     <div class="col-sm-3">
-      <h5>단어</h5>
+      <span>단어</span>
     </div>
-    <div class="col-sm-1"></div>
-    <div class="col-sm-7">
-      <h5>뜻</h5>
+    <div class="col-sm-2"></div>
+    <div class="col-sm-6">
+      <span>뜻</span>
     </div>
   </div>
 
-  {{#each outputs as |quiz index|}}
-  <div class="row scramble">
+  {{#each quizzes as |quiz index|}}
+  <div class="row matchup">
     <div class="col-sm-1">
       <span>{{add 1 index}}</span>
     </div>
-    <div class="col-sm-3 scr-block">
+    <div class="col-sm-3 qz-block">
       <span>{{quiz.word}}</span>
     </div>
-    <div class="col-sm-1"></div>
-    <div class="col-sm-7 scr-block">
+    <div class="col-sm-2 dot-in"></div>
+    <div class="col-sm-6 qz-block dot-out">
       <span>{{quiz.answer}}</span>
     </div>
   </div>
