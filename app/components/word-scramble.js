@@ -14,7 +14,7 @@ export default Ember.Component.extend({
     let outputs = this.get('outputs'),
         array,currentIndex,temporaryValue,randomIndex;
 
-    if(outputs && outputs.length > 1){
+    if(outputs && outputs.length > 0){
       array = outputs.slice(),
       currentIndex= array.length;
 

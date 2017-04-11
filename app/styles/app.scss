@@ -26,7 +26,7 @@ body{
 .disqus{margin-top:125px;}
 .message{font-weight: bold;}
 .none{display: none;}
-.grey-line{border-bottom: 1px solid #ddd;}//3px solid #cacdd0;
+// .grey-line{border-bottom: 1px solid #ddd;}//3px solid #cacdd0;
 
 #paint-bleach {
   img,canvas {
@@ -160,7 +160,7 @@ body{
 #word-input {
 
   padding: 20px 0px;
-  background-color: rgba(39,137,216,.10);
+  // background-color: rgba(39,137,216,.10);
   border-radius: 5px;
 
   ul{
@@ -177,7 +177,7 @@ body{
       .input-quiz {
         display: inline-block;
         padding : 6px 10px;
-        width: 41%;
+        width: 43%;
       }
 
       input.input-quiz{
@@ -189,6 +189,12 @@ body{
         cursor: pointer;
       }
     }//li
+
+    li.input-item{
+      background-color: rgba(39,137,216,.04);
+      border-bottom: 1px solid #ddd;
+      border-radius: 3px;
+    }
   }
 
 }

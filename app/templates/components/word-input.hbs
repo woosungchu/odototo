@@ -8,7 +8,7 @@
       <a {{action 'addrow'}} class="btn btn-default">Add</a>
     </li>
     {{#each inputs as |input index|}}
-      <li class="grey-line">
+      <li class="input-item">
         <span class="input-quiz">{{input.word}}</span>
         <span class="input-quiz">{{input.answer}}</span>
         <span {{action 'removerow' index}} class="glyphicon glyphicon-remove"></span>

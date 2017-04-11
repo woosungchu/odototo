@@ -3,10 +3,6 @@ import Ember from 'ember';
 export default Ember.Component.extend({
   inputs: [],//[{word:'',answer:''},{word:'',answer:''}]
 
-  init(){
-    this._super(...arguments);
-  },
-
   yield(){
     let inputs = this.get('inputs'),
         outputs = inputs.slice();
@@ -32,8 +28,14 @@ export default Ember.Component.extend({
         answer:quiz[1].value
       };
 
+      //refresh
+      quiz[0].value = "";
+      quiz[1].value = "";
+
       inputs.pushObject(data);
       this.yield();
+      quiz[0].focus();
+      
     },//addrow
 
     removerow(idx){
