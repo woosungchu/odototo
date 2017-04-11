@@ -130,7 +130,10 @@ body{
   #word-scramble{
 
     .scramble{
+      display: flex;
+
       div{
+        flex:inherit;
         padding: 5px 20px;
         margin:5px 0px;
       }
