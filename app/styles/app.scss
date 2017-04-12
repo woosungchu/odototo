@@ -178,6 +178,14 @@ body{
         display: inline-block;
         padding : 6px 10px;
         width: 43%;
+
+        &.input-quiz-a{
+          width: 32%;
+        }
+
+        &.input-quiz-b{
+          width: 55%;
+        }
       }
 
       input.input-quiz{

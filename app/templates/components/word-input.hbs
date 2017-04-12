@@ -3,14 +3,14 @@
 <div id="word-input">
   <ul>
     <li>
-      <input class="input-quiz" type="text" name="word" placeholder="Word" >
-      <input class="input-quiz" type="text" name="answer" placeholder="Answer" >
+      <input class="input-quiz input-quiz-a" type="text" name="word" placeholder="Word" >
+      <input class="input-quiz input-quiz-b" type="text" name="answer" placeholder="Answer" >
       <a {{action 'addrow'}} class="btn btn-default">Add</a>
     </li>
     {{#each inputs as |input index|}}
       <li class="input-item">
-        <span class="input-quiz">{{input.word}}</span>
-        <span class="input-quiz">{{input.answer}}</span>
+        <span class="input-quiz input-quiz-a">{{input.word}}</span>
+        <span class="input-quiz input-quiz-b">{{input.answer}}</span>
         <span {{action 'removerow' index}} class="glyphicon glyphicon-remove"></span>
       </li>
     {{/each}}
